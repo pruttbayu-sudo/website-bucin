@@ -3,279 +3,132 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>SPESIALL BUATT MIRAA SAYANGG  💗</title>
+
+  <title>Untuk Kamu 💗</title>
 
   <style>
     * {
       box-sizing: border-box;
-      margin: 0;
-      padding: 0;
     }
 
     body {
+      margin: 0;
       min-height: 100vh;
-      overflow: hidden;
-      font-family: "Poppins", Arial, sans-serif;
-      background:
-        radial-gradient(circle at 20% 20%, rgba(255,255,255,.8) 0 2px, transparent 3px),
-        radial-gradient(circle at 80% 30%, rgba(255,255,255,.7) 0 2px, transparent 3px),
-        linear-gradient(135deg, #ffd6e7, #fff5f8, #ffc1d8);
-      background-size: 180px 180px, 250px 250px, cover;
-      color: #7b294b;
       display: flex;
       justify-content: center;
       align-items: center;
-      position: relative;
+      padding: 20px;
+
+      font-family: Arial, sans-serif;
+
+      background: linear-gradient(
+        135deg,
+        #ffd6e7,
+        #fff,
+        #ffc2d8
+      );
+
+      color: #7a2948;
     }
 
-    /* Kartu utama */
     .card {
-      width: 90%;
-      max-width: 650px;
-      padding: 40px 25px;
-      text-align: center;
-      background: rgba(255,255,255,.78);
-      backdrop-filter: blur(12px);
-      border: 2px solid rgba(255,255,255,.8);
-      border-radius: 30px;
-      box-shadow: 0 15px 50px rgba(190, 70, 110, .25);
-      z-index: 5;
-      animation: muncul 1s ease;
-    }
+      width: 100%;
+      max-width: 500px;
 
-    @keyframes muncul {
-      from {
-        opacity: 0;
-        transform: translateY(30px) scale(.95);
-      }
-      to {
-        opacity: 1;
-        transform: translateY(0) scale(1);
-      }
+      padding: 35px 25px;
+
+      text-align: center;
+
+      background: rgba(255,255,255,0.9);
+
+      border-radius: 25px;
+
+      box-shadow:
+        0 10px 30px rgba(180,70,110,0.2);
     }
 
     .heart {
       font-size: 55px;
-      animation: detak 1.2s infinite;
-    }
-
-    @keyframes detak {
-      0%, 100% { transform: scale(1); }
-      50% { transform: scale(1.2); }
     }
 
     h1 {
-      margin: 10px 0;
       color: #d6336c;
-      font-size: clamp(28px, 7vw, 45px);
+      font-size: 32px;
     }
 
-    .subtitle {
-      color: #a5486a;
-      font-size: 15px;
-      margin-bottom: 25px;
-    }
+    #pesan {
+      min-height: 120px;
 
-    #typing {
-      min-height: 100px;
-      font-size: 17px;
-      line-height: 1.8;
-      color: #6e3047;
-      margin: 15px auto 25px;
-      max-width: 530px;
-    }
+      line-height: 1.7;
 
-    .cursor {
-      border-right: 2px solid #d6336c;
-      animation: kedip .7s infinite;
-    }
+      font-size: 16px;
 
-    @keyframes kedip {
-      50% { border-color: transparent; }
-    }
-
-    .buttons {
-      display: flex;
-      justify-content: center;
-      gap: 15px;
-      margin-top: 20px;
-      position: relative;
-      min-height: 55px;
+      margin: 25px 0;
     }
 
     button {
       border: none;
-      padding: 13px 30px;
+
+      padding: 13px 25px;
+
       border-radius: 30px;
+
       font-size: 16px;
+
       font-weight: bold;
+
+      margin: 5px;
+
       cursor: pointer;
-      transition: .25s;
     }
 
     #mau {
-      background: linear-gradient(135deg, #ff4f8b, #d6336c);
+      background: #d6336c;
       color: white;
-      box-shadow: 0 7px 20px rgba(214,51,108,.3);
-    }
-
-    #mau:hover {
-      transform: scale(1.08);
-      box-shadow: 0 10px 25px rgba(214,51,108,.45);
     }
 
     #enggak {
       background: white;
       color: #d6336c;
       border: 2px solid #ff9fbd;
-      position: relative;
     }
 
-    #musicBtn {
-      margin-top: 25px;
-      background: rgba(255,255,255,.8);
+    #musik {
+      background: #ffe1eb;
       color: #d6336c;
-      border: 1px solid #ffb6cc;
-      padding: 10px 20px;
+      margin-top: 20px;
     }
 
-    /* Hati melayang */
-    .floating-heart {
-      position: fixed;
-      bottom: -50px;
-      font-size: 22px;
-      pointer-events: none;
-      z-index: 1;
-      animation: terbang linear forwards;
-    }
-
-    @keyframes terbang {
-      0% {
-        transform: translateY(0) rotate(0deg);
-        opacity: 0;
-      }
-      15% {
-        opacity: 1;
-      }
-      100% {
-        transform: translateY(-110vh) rotate(360deg);
-        opacity: 0;
-      }
-    }
-
-    /* Popup */
-    .popup {
-      position: fixed;
-      inset: 0;
-      background: rgba(90, 20, 45, .45);
+    #popup {
       display: none;
+
+      position: fixed;
+
+      inset: 0;
+
+      background: rgba(0,0,0,0.5);
+
       justify-content: center;
+
       align-items: center;
-      z-index: 100;
+
       padding: 20px;
     }
 
-    .popup.show {
-      display: flex;
-      animation: fade .3s ease;
-    }
-
-    @keyframes fade {
-      from { opacity: 0; }
-      to { opacity: 1; }
-    }
-
     .popup-box {
-      width: 100%;
-      max-width: 420px;
       background: white;
-      padding: 35px 25px;
-      border-radius: 28px;
-      text-align: center;
-      box-shadow: 0 20px 60px rgba(0,0,0,.25);
-      animation: pop .5s ease;
-    }
 
-    @keyframes pop {
-      from {
-        transform: scale(.5);
-        opacity: 0;
-      }
-      to {
-        transform: scale(1);
-        opacity: 1;
-      }
+      padding: 30px;
+
+      border-radius: 25px;
+
+      text-align: center;
+
+      max-width: 400px;
     }
 
     .popup-box h2 {
       color: #d6336c;
-      margin-bottom: 15px;
-    }
-
-    .popup-box p {
-      line-height: 1.7;
-      color: #6e3047;
-    }
-
-    .close {
-      margin-top: 20px;
-      background: #d6336c;
-      color: white;
-    }
-
-    /* Confetti */
-    .confetti {
-      position: fixed;
-      width: 10px;
-      height: 16px;
-      top: -20px;
-      z-index: 200;
-      animation: jatuh 3s linear forwards;
-      pointer-events: none;
-    }
-
-    @keyframes jatuh {
-      0% {
-        transform: translateY(0) rotate(0deg);
-        opacity: 1;
-      }
-      100% {
-        transform: translateY(110vh) rotate(720deg);
-        opacity: 0;
-      }
-    }
-
-    /* Bintang */
-    .star {
-      position: fixed;
-      color: white;
-      font-size: 10px;
-      opacity: .8;
-      animation: berkedip 2s infinite alternate;
-      z-index: 0;
-    }
-
-    @keyframes berkedip {
-      from { opacity: .2; }
-      to { opacity: 1; }
-    }
-
-    @media (max-width: 500px) {
-      .card {
-        padding: 30px 18px;
-      }
-
-      h1 {
-        font-size: 30px;
-      }
-
-      #typing {
-        font-size: 15px;
-      }
-
-      button {
-        padding: 12px 24px;
-      }
     }
   </style>
 </head>
@@ -284,307 +137,162 @@
 
   <div class="card">
 
-    <div class="heart">💗</div>
-
-    <h1>Special For You</h1>
-
-    <div class="subtitle">
-      Ada sesuatu yang mau aku sampaikan... 💌
+    <div class="heart">
+      💗
     </div>
 
-    <div id="typing">
-      <span class="cursor"></span>
-    </div>
+    <h1>
+      SPESIAL BUAT MIRA
+    </h1>
 
-    <div class="buttons">
-      <button id="mau">Mau 💕</button>
-      <button id="enggak">Enggak 😜</button>
-    </div>
+    <p>
+      Ada sesuatu yang mau aku sampaikan...
+    </p>
 
-    <button id="musicBtn">
+    <div id="pesan"></div>
+
+    <button id="mau">
+      Mau 💕
+    </button>
+
+    <button id="enggak">
+      Enggak 😜
+    </button>
+
+    <br>
+
+    <button id="musik">
       🎵 Putar Musik
     </button>
 
   </div>
 
-  <!-- POPUP -->
-  <div class="popup" id="popup">
-    <div class="popup-box">
-      <div style="font-size:55px;">💖</div>
 
-      <h2>Yeay! 🥰</h2>
+  <!-- POPUP -->
+
+  <div id="popup">
+
+    <div class="popup-box">
+
+      <h2>
+        Yeay! 💖
+      </h2>
 
       <p>
-        Makasih udah memilih "Mau" 💕<br><br>
-
-        akuu sayaanggg bangett samaaa kamuu
-        semogaaa kitaa biaa terusss bersamaaa yaa
-  terimakasi    sayangkuuu    muahhh. ✨
+        Makasih udah memilih "Mau" 🥰
         <br><br>
-
-        miraaa adalahh orangg yang sangatt sangattt spesiall . 💗
+        Kamu adalah seseorang yang
+        sangat spesial buat aku. 💗
       </p>
 
-      <button class="close" id="closePopup">
-        Tutup 💕
+      <button onclick="tutupPopup()">
+        Tutup
       </button>
+
     </div>
+
   </div>
 
-  <!-- Musik -->
-  <audio id="music" loop>
-    <source src="musik.mp3" type="audio/mpeg">
+
+  <!-- MUSIK -->
+
+  <audio id="audio" loop>
+    <source src="7662107916178148112.mp3" type="audio/mpeg">
   </audio>
 
+
   <script>
-    /* =========================
-       TYPING EFFECT
-    ========================= */
 
-    const text =
-      "miraaa sayangkuuu, " +
-      "terimakasihh yaa sudahh mauu bertahann sama aku selama ini. " +
-      "terima kasih sekali sudah menerima segala kekurangankuu. " +
-      "semogaa kitaa berduaa akan suksess bersamaa dii masa depann. 💗";
+    /* TYPING EFFECT */
 
-    const typing = document.getElementById("typing");
+    const teks =
+      "Aku mungkin nggak selalu pandai " +
+      "mengungkapkan perasaan, tapi aku ingin " +
+      "kamu tahu kalau kehadiranmu sangat berarti. " +
+      "Terima kasih sudah menjadi bagian dari " +
+      "cerita indah ini. 💗";
 
-    let index = 0;
+    let posisi = 0;
 
-    function typeText() {
-      if (index < text.length) {
-        typing.innerHTML =
-          text.substring(0, index + 1) +
-          '<span class="cursor"></span>';
+    function mengetik() {
 
-        index++;
+      if (posisi < teks.length) {
 
-        setTimeout(typeText, 45);
+        document.getElementById("pesan").textContent =
+          teks.substring(0, posisi + 1);
+
+        posisi++;
+
+        setTimeout(mengetik, 40);
       }
     }
 
-    typeText();
+    mengetik();
 
 
-    /* =========================
-       TOMBOL ENGGAK LARI
-    ========================= */
+    /* TOMBOL MAU */
 
-    const enggak = document.getElementById("enggak");
+    document.getElementById("mau").onclick =
+      function() {
 
-    function kabur() {
+        document.getElementById("popup").style.display =
+          "flex";
 
-      const maxX = window.innerWidth - enggak.offsetWidth - 20;
-      const maxY = window.innerHeight - enggak.offsetHeight - 20;
+      };
 
-      const randomX = Math.max(
-        10,
-        Math.random() * maxX
-      );
 
-      const randomY = Math.max(
-        10,
-        Math.random() * maxY
-      );
+    /* TOMBOL ENGGAK */
 
-      enggak.style.position = "fixed";
-      enggak.style.left = randomX + "px";
-      enggak.style.top = randomY + "px";
+    document.getElementById("enggak").onclick =
+      function() {
+
+        alert("Eits! Jangan pilih ini 😜💗");
+
+      };
+
+
+    /* TUTUP POPUP */
+
+    function tutupPopup() {
+
+      document.getElementById("popup").style.display =
+        "none";
+
     }
 
-    // Untuk komputer
-    enggak.addEventListener("mouseenter", kabur);
 
-    // Untuk HP
-    enggak.addEventListener("touchstart", function(e) {
-      e.preventDefault();
-      kabur();
-    });
+    /* MUSIK */
 
+    let sedangMain = false;
 
-    /* =========================
-       TOMBOL MAU
-    ========================= */
+    document.getElementById("musik").onclick =
+      function() {
 
-    const mau = document.getElementById("mau");
-    const popup = document.getElementById("popup");
+        const audio =
+          document.getElementById("audio");
 
-    mau.addEventListener("click", function() {
+        if (sedangMain) {
 
-      // Tampilkan popup
-      popup.classList.add("show");
+          audio.pause();
 
-      // Confetti
-      buatConfetti(100);
+          this.textContent =
+            "🎵 Putar Musik";
 
-      // Hati tambahan
-      for (let i = 0; i < 15; i++) {
-        setTimeout(buatHati, i * 100);
-      }
-    });
+          sedangMain = false;
 
-
-    /* =========================
-       CLOSE POPUP
-    ========================= */
-
-    document
-      .getElementById("closePopup")
-      .addEventListener("click", function() {
-
-        popup.classList.remove("show");
-
-      });
-
-
-    /* =========================
-       CONFETTI
-    ========================= */
-
-    function buatConfetti("jumlah") {
-
-      for (let i = 0; i < jumlah; i++) {
-
-        const confetti = document.createElement("div");
-
-        confetti.className = "confetti";
-
-        confetti.style.left =
-          Math.random() * 100 + "vw";
-
-        confetti.style.animationDelay =
-          Math.random() * 1.5 + "s";
-
-        confetti.style.transform =
-          "rotate(" + Math.random() * 360 + "deg)";
-
-        // Bentuk acak
-        const bentuk = Math.random();
-
-        if (bentuk > .5) {
-          confetti.innerHTML = "💗";
-          confetti.style.width = "auto";
-          confetti.style.height = "auto";
-          confetti.style.fontSize = "18px";
-          confetti.style.background = "transparent";
         } else {
-          confetti.style.background =
-            ["#ff4f8b", "#ff9fbd", "#ffccd9", "#d6336c", "#ffffff"]
-            [Math.floor(Math.random() * 5)];
+
+          audio.play();
+
+          this.textContent =
+            "⏸️ Matikan Musik";
+
+          sedangMain = true;
+
         }
 
-        document.body.appendChild(confetti);
+      };
 
-        setTimeout(() => {
-          confetti.remove();
-        }, 4000);
-      }
-    }
-
-
-    /* =========================
-       HATI MELAYANG
-    ========================= */
-
-    function buatHati() {
-
-      const heart = document.createElement("div");
-
-      heart.className = "floating-heart";
-
-      const hearts = ["💗", "💕", "💖", "💘", "💞", "❤️"];
-
-      heart.innerHTML =
-        hearts[Math.floor(Math.random() * hearts.length)];
-
-      heart.style.left =
-        Math.random() * 100 + "vw";
-
-      heart.style.fontSize =
-        (15 + Math.random() * 25) + "px";
-
-      heart.style.animationDuration =
-        (4 + Math.random() * 5) + "s";
-
-      document.body.appendChild(heart);
-
-      setTimeout(() => {
-        heart.remove();
-      }, 10000);
-    }
-
-    // Hati muncul terus
-    setInterval(buatHati, 700);
-
-
-    /* =========================
-       BINTANG
-    ========================= */
-
-    for (let i = 0; i < 35; i++) {
-
-      const star = document.createElement("div");
-
-      star.className = "star";
-
-      star.innerHTML = "✦";
-
-      star.style.left =
-        Math.random() * 100 + "vw";
-
-      star.style.top =
-        Math.random() * 100 + "vh";
-
-      star.style.animationDelay =
-        Math.random() * 2 + "s";
-
-      document.body.appendChild(star);
-    }
-
-
-    /* =========================
-       MUSIK
-    ========================= */
-
-    const music = document.getElementById("music");
-    const musicBtn = document.getElementById("musicBtn");
-
-    let playing = false;
-
-    musicBtn.addEventListener("click", function() {
-
-      if (!playing) {
-
-        music.play();
-
-        musicBtn.innerHTML =
-          "⏸️ Matikan Musik";
-
-        playing = true;
-
-      } else {
-
-        music.pause();
-
-        musicBtn.innerHTML =
-          "🎵 Putar Musik";
-
-        playing = false;
-      }
-    });
-
-
-    /* =========================
-       *KLIK* DI LUAR POPUP
-    ========================= */
-
-    popup.addEventListener("click", function(e) {
-
-      if (e.target === popup) {
-        popup.classList.remove("show");
-      }
-
-    });
   </script>
 
 </body>
